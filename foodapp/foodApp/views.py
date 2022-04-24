@@ -1,3 +1,4 @@
+from django.http import request
 from django.shortcuts import render
 from abc import abstractmethod
 
@@ -22,12 +23,19 @@ class RestaurantService:
 class CustomerService:
 
     @abstractmethod
-    def SignUp(self, first_name, second_name, email, password):
+    def SignUp(self, first_name, second_name, email, mobileno, password):
         pass
     
-    @abstractmethod
+    @abstractmethod(request='POST')
     def SignIn(self, email, password):
         pass
+    
+    # we can use Tries data structure
+    @abstractmethod
+    def search(self, restaurantName, food):
+        pass
+
+    
     
 
 
