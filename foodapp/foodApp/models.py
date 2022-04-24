@@ -6,6 +6,7 @@ from django.db import models
 
 class RestaurantServiceRegistration(models.Model):
     emailId = models.EmailField(max_length=255, unique=True, db_index=True)
-    name = models.CharField()
+    name = models.CharField(max_length=255)
+    
 
 
